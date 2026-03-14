@@ -6,13 +6,14 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - name: Preparar Proyecto
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Descargar y Descomprimir
         run: |
           pip install gdown
           gdown https://drive.google.com/uc?id=1ZUzXrJ1dUU_5cQzyOO6-y-oH_wEpJlda
           unzip grabpack_in_godot.zip
-          # Movemos el archivo de configuración adentro de la carpeta del juego
-          cp export_presets.cfg grabpack_in_godot/
 
       - name: Exportar APK
         uses: firebelley/godot-export@v5.2.1
