@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Descargar desde Drive
         run: |
-          sudo apt-get install gdown
+          pip install gdown
           gdown https://drive.google.com/uc?id=1ZUzXrJ1dUU_5cQzyOO6-y-oH_wEpJlda
           unzip grabpack_in_godot.zip
 
